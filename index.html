@@ -35,9 +35,16 @@
                      <h1> {{ product }} </h1>
 
                      <!-- 4- Conditional Rendering - we add the below <p> and want to give them a condition where 1 shows up, we head to app to make property-->
-                     <p v-show="inStock">In Stock</p>  <!-- v-if it is in stock - show 'in stock'-->  <!-- can be achieved with v-show as well -->
+                    <!-- <p v-show="inStock">In Stock</p> -->  <!-- v-if it is in stock - show 'in stock'-->  <!-- can be achieved with v-show as well -->
                     <!--<p v-else>Out of Stock</p> -->  <!-- or else show 'out of stock'-->
-
+                    
+                  
+                      <h2 v-if="inventory > 10">In stock!</h2>
+                      <h2 v-else-if="inventory <= 10 && inventory > 0">Almost out of stock!</h2> <!-- if it has 10 or less, but more than 0-->
+                      <h2 v-else>Oh no 😢 Out of Stock!</h2>
+                 
+                      <p v-if="onSale"> On Sale </p>
+                      <p v-else> Nah no sale </p>
 
                <!-- exercise to add a url to the data object and then use v-bind the url to an anchor tag's href attribute. -->
                 <a v-bind:href="url" target="_blank">
@@ -53,7 +60,7 @@
          </div>
       </div>
    </div>
-
+      
       <!-- Import APP -->
       <script src="./main.js"></script>
 
