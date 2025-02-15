@@ -3,7 +3,7 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
-      <title>Vue Mastery</title>
+      <title>Socks Shop With Vue 3</title>
 
       <!-- Import Styles -->
       <link rel="stylesheet" href="./assets/styles.css" />
@@ -26,12 +26,6 @@
                   <img v-bind:src="image">
                   <!-- how do we bind src to image? -> v-bind:src="image" - 💡this is the v-bind directive - we created a bond between the attribute "image" & the data itself inside it in the app-->
                  
-                  <!-- ON/OFF BUTTON -->
-                  <button @click="awesome = !awesome">ON/OFF</button>
-
-                  <h1 v-if="awesome">Clean socks!</h1>
-                  <h1 v-else>Stinky socks 😢</h1>
-
                </div>
 
                   <div class="product-info">
@@ -49,21 +43,45 @@
                       <h2 v-if="inventory > 10">In stock!</h2>
                       <h2 v-else-if="inventory <= 10 && inventory > 0">Almost out of stock!</h2> <!-- if it has 10 or less, but more than 0-->
                       <h2 v-else>Oh no 😢 Out of Stock!</h2>
-                 <!-- On Sake or Off-->
-                      <p v-show="onSale"> On Sale </p>
-                    
+                      
+                      <ul>
+                        <!-- for each detail (array index) in details (array) print out each {{ detail }} from the array and render them in order  -->
+                        <li v-for="detail in details"> {{ detail }} </li>
+                      </ul>
 
-                     
-               <!-- exercise to add a url to the data object and then use v-bind the url to an anchor tag's href attribute. -->
-                <a v-bind:href="url" target="_blank">
-                I love MY DISCORD SERVER! 💗⭐</a>
+                      <!-- you can call on their properties-->
+                      <div v-for="variant in variants" :key="variant.id"> COLOR: {{ variant.color }} </div>
+                      
+                  
+                      <li v-for="item in items">
+                        {{ item.message }}
+                      </li>
 
-                  <!--{{}} will display the same and update simultaneously on multiple places -->
-                <p>
-                {{ product }}
-               </p>
-             
+                      <!-- exercise to do sizes, I did quantities too -->
+                      <ul>
+                      <li v-for="size in sizes" :key="size.quantity">
+                       Size: {{ size.size }} Quantity: {{ size.quantity }}
+                      </li>
+                      </ul>
 
+                      <!-- counter for quantities later -->
+                      <div>
+                        <button @click="count++">{{ count }}</button>
+                      </div>
+
+
+                      <ul>
+                        <template v-for="item in items">
+                          <li>{{ item.msg }}</li>
+                          <li class="divider" role="presentation"></li>
+                        </template>
+                      </ul>
+
+                      <template v-for="todo in todos" :key="todo.name">
+                        <li v-if="!todo.isComplete">
+                          {{ todo.name }}
+                        </li>
+                      </template>
             </div>
          </div>
       </div>

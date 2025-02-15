@@ -22,15 +22,44 @@ const app = Vue.createApp({
             // we make this a boolean and add it to the html with v-if
             //inStock: true
             // display changes to none in the devtools when it's changed to false dynamically
-            
+           
+           //awesome
            awesome: true,
 
-           inventory: 3,
+           // if inventory > 10 (stock), else-if inventory <= 10 && inventory > 0 (almost out of stock), else (out of stock) 
+           inventory: 99,
 
            // exercise: add an onSale boolean to the data object, use that to conditionally render a p tag that says "On Sale", whenever onSale is true
-           onSale: false
+           //onSale: false,
 
-            
+           // how do we display details as a list? 
+           details: [ '50% cotton', '30% wool', '20% polyester'],
+           // creating variants array 
+           variants: [
+            { id: 437, color: 'lime' },
+            { id: 212, color: 'blue'}, 
+           ],
+
+           // items
+           items: [
+            { message: 'Foo'}, { message: 'Bar'}
+           ],
+
+           // SIZES
+           sizes: [
+             { quantity: 20, size: 35 }, 
+             { quantity: 9, size: 36 }, 
+             { quantity: 16, size: 37 }, 
+             { quantity: 12, size: 38 },
+             { quantity: 35, size: 39 }
+           ],
+
+           // count
+            count: 0,
+
+            todos: [
+                { name: 'Schedule 30 Shorts!'} , { name: 'Giveaway' }, { name: 'Shower!' } 
+            ]
         }
     }
 })
