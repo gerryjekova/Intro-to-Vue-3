@@ -10,10 +10,21 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+
+      <!-- SWITCH OUT THE HEADER TEXT FOR PRODUCT VALUE: {{ this syntax allows you to run valid Javascript within the HTML }} -->
+      <!-- EXAMPLE: <p> {{ firstName + ' ' + lastName}} </p> -->
+      <!-- EXAMPLE 2: <span> {{ clicked ? true : false }} </span> -->
+      <!--EXAMPLE 3: <div> {{ message.method() }} </div> -->
+      <h1> {{ product }} </h1>
+      <p> I love {{ product }} </p>
     </div>
 
     <!-- Import APP -->
     <script src="./main.js"></script>
+
+    <!-- MOUNT APP to DOM by attaching it to the div id="app" above-->
+     <script>
+      const mountedApp = app.mount('#app')
+     </script>
   </body>
 </html>
