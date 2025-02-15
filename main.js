@@ -8,8 +8,16 @@ const app = Vue.createApp({
         // returns an object
         return {
             // we place our data inside here, which for now is just Socks
-            product: 'Lamp '
+            product: 'Socks',
             // we then proceed to import the app in our index.html <div id="app"> <h1> {{ product }} </h1> </div>
+
+            // we then add the image property and give it the path into the image folder  
+            image: './assets/images/socks_blue.jpg',
+            // we then go to add an <img> to the html
+
+            url: 'http://www.youtube.com/watch?v=q8CHXefn7B4&t='
+            // adding the url to the data object ,I tried to run the link with https and it didn't go through in case I need to be reminded 
+
         }
     }
 })

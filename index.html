@@ -1,39 +1,60 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Vue Mastery</title>
-    <!-- Import Styles -->
-    <link rel="stylesheet" href="./assets/styles.css" />
-    <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  </head>
-  <body>
-    <div id="app">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Vue Mastery</title>
 
-      <!-- Adding this lot in lesson 2 - Attribute Binding in Vue 3-->
-      <div class="nav-bar"></div>
-      <div class="product-display">
-        <div class="product-container">
-          <div class="product-image">
-            <!-- image goes here -->
-          </div>
+      <!-- Import Styles -->
+      <link rel="stylesheet" href="./assets/styles.css" />
 
-      <!-- SWITCH OUT THE HEADER TEXT FOR PRODUCT VALUE: {{ this syntax allows you to run valid Javascript within the HTML }} -->
-      <!-- EXAMPLE: <p> {{ firstName + ' ' + lastName}} </p> -->
-      <!-- EXAMPLE 2: <span> {{ clicked ? true : false }} </span> -->
-      <!--EXAMPLE 3: <div> {{ message.method() }} </div> -->
-      <h1> {{ product }} </h1> 
-      <br>
-      <p> I love {{ product }} </p>
-    </div>
+      <!-- Import Vue.js -->
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   </head>
+   <body>
+      <div id="app">
+         <!-- NAV AND CLOSING DIV TAG IS ON SAME ROW -->
+         <div class="nav-bar"></div>
 
-    <!-- Import APP -->
-    <script src="./main.js"></script>
+         <!-- Adding this lot in lesson 2 - Attribute Binding in Vue 3-->
+         <div class="product-display">
+            <div class="product-container">
+               <!-- We will render one of the images from the assets/images directory below in the "product-image", we navigate to the data property in main.js to add it  -->
+               <div class="product-image">
+                  <!-- image goes here below -->
+                 
+                  <img v-bind:src="image">
+                  <!-- how do we bind src to image? -> v-bind:src="image" - 💡this is the v-bind directive - we created a bond between the attribute "image" & the data itself inside it in the app-->
+               </div>
 
-    <!-- MOUNT APP to DOM by attaching it to the div id="app" above-->
-     <script>
-      const mountedApp = app.mount('#app')
-     </script>
-  </body>
+               <!-- SWITCH OUT THE HEADER TEXT FOR PRODUCT VALUE: {{ this syntax allows you to run valid Javascript within the HTML }} -->
+               <!-- EXAMPLE: <p> {{ firstName + ' ' + lastName}} </p> -->
+               <!-- EXAMPLE 2: <span> {{ clicked ? true : false }} </span> -->
+               <!--EXAMPLE 3: <div> {{ message.method() }} </div> -->
+               <h1> {{ product }} </h1>
+            
+              <!-- exercise to add a url to the data object and then use v-bind the url to an anchor tag's href attribute. -->
+               
+                
+               <!--{{}} will display the same and update simultaneously on multiple places -->
+               
+                <a v-bind:href="url" target="_blank">
+                I love </a>
+                <p>
+                {{ product }} </p>
+             
+
+            </div>
+         </div>
+      </div>
+
+      <!-- Import APP -->
+      <script src="./main.js"></script>
+
+      <!-- MOUNT APP to DOM by attaching it to the div id="app" above-->
+      <script>
+         const mountedApp = app.mount('#app')
+      </script>
+
+   </body>
 </html>
