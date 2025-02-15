@@ -27,26 +27,32 @@
                   <!-- how do we bind src to image? -> v-bind:src="image" - 💡this is the v-bind directive - we created a bond between the attribute "image" & the data itself inside it in the app-->
                </div>
 
-               <!-- SWITCH OUT THE HEADER TEXT FOR PRODUCT VALUE: {{ this syntax allows you to run valid Javascript within the HTML }} -->
-               <!-- EXAMPLE: <p> {{ firstName + ' ' + lastName}} </p> -->
-               <!-- EXAMPLE 2: <span> {{ clicked ? true : false }} </span> -->
-               <!--EXAMPLE 3: <div> {{ message.method() }} </div> -->
-               <h1> {{ product }} </h1>
-            
-              <!-- exercise to add a url to the data object and then use v-bind the url to an anchor tag's href attribute. -->
-               
-                
-               <!--{{}} will display the same and update simultaneously on multiple places -->
-               
+                  <div class="product-info">
+                     <!-- SWITCH OUT THE HEADER TEXT FOR PRODUCT VALUE: {{ this syntax allows you to run valid Javascript within the HTML }} -->
+                     <!-- EXAMPLE: <p> {{ firstName + ' ' + lastName}} </p> -->
+                     <!-- EXAMPLE 2: <span> {{ clicked ? true : false }} </span> -->
+                     <!--EXAMPLE 3: <div> {{ message.method() }} </div> -->
+                     <h1> {{ product }} </h1>
+
+                     <!-- 4- Conditional Rendering - we add the below <p> and want to give them a condition where 1 shows up, we head to app to make property-->
+                     <p v-show="inStock">In Stock</p>  <!-- v-if it is in stock - show 'in stock'-->  <!-- can be achieved with v-show as well -->
+                    <!--<p v-else>Out of Stock</p> -->  <!-- or else show 'out of stock'-->
+
+
+               <!-- exercise to add a url to the data object and then use v-bind the url to an anchor tag's href attribute. -->
                 <a v-bind:href="url" target="_blank">
                 I love </a>
+
+                  <!--{{}} will display the same and update simultaneously on multiple places -->
                 <p>
-                {{ product }} </p>
+                {{ product }}
+               </p>
              
 
             </div>
          </div>
       </div>
+   </div>
 
       <!-- Import APP -->
       <script src="./main.js"></script>

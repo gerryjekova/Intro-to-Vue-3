@@ -15,9 +15,13 @@ const app = Vue.createApp({
             image: './assets/images/socks_blue.jpg',
             // we then go to add an <img> to the html
 
-            url: 'http://www.youtube.com/watch?v=q8CHXefn7B4&t='
+            url: 'http://www.youtube.com/watch?v=q8CHXefn7B4&t=',
             // adding the url to the data object ,I tried to run the link with https and it didn't go through in case I need to be reminded 
 
+            // we make this a boolean and add it to the html with v-if
+            inStock: true
+            // display changes to none in the devtools when it's changed to false dynamically
+         
         }
     }
 })

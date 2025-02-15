@@ -7,3 +7,12 @@
 >>> `v-bind` <-  (dynamically bind)  `:` <- (the : serves as the glue) `src` <- (attribute) `"image"` <- value of the expression 
 >> ![bind to image data](assets/images/binds-image-to-imagedata.png)
 > ![use cases](assets/images/vbind-usecases.png)
+- 4 - Conditional Rendering 
+- [Docs](https://vuejs.org/guide/essentials/conditional.html)
+>- `<p` **v-show**=`"inStock">`In Stock`</p>` 
+>- `v-if` it is `in stock` 
+>- `show` `'in stock'`
+>>- can be achieved with `v-if` as well
+>>>-  `<p` **v-if**=`"inStock">`In Stock`</p>` 
+>>- `v-if` it is in stock - show `'in stock'`
+>- `<p` **v-else**`>` Out of Stock `</p>`
