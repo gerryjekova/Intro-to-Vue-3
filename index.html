@@ -25,6 +25,13 @@
                  
                   <img v-bind:src="image">
                   <!-- how do we bind src to image? -> v-bind:src="image" - 💡this is the v-bind directive - we created a bond between the attribute "image" & the data itself inside it in the app-->
+                 
+                  <!-- ON/OFF BUTTON -->
+                  <button @click="awesome = !awesome">ON/OFF</button>
+
+                  <h1 v-if="awesome">Clean socks!</h1>
+                  <h1 v-else>Stinky socks 😢</h1>
+
                </div>
 
                   <div class="product-info">
@@ -38,14 +45,15 @@
                     <!-- <p v-show="inStock">In Stock</p> -->  <!-- v-if it is in stock - show 'in stock'-->  <!-- can be achieved with v-show as well -->
                     <!--<p v-else>Out of Stock</p> -->  <!-- or else show 'out of stock'-->
                     
-                  
+                  <!-- inventory v-if v-else-if v-else -->
                       <h2 v-if="inventory > 10">In stock!</h2>
                       <h2 v-else-if="inventory <= 10 && inventory > 0">Almost out of stock!</h2> <!-- if it has 10 or less, but more than 0-->
                       <h2 v-else>Oh no 😢 Out of Stock!</h2>
-                 
-                      <p v-if="onSale"> On Sale </p>
-                      <p v-else> Nah no sale </p>
+                 <!-- On Sake or Off-->
+                      <p v-show="onSale"> On Sale </p>
+                    
 
+                     
                <!-- exercise to add a url to the data object and then use v-bind the url to an anchor tag's href attribute. -->
                 <a v-bind:href="url" target="_blank">
                 I love </a>

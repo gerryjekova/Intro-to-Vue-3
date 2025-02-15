@@ -23,11 +23,13 @@ const app = Vue.createApp({
             //inStock: true
             // display changes to none in the devtools when it's changed to false dynamically
             
-            //awesome: true
+           awesome: true,
+
            inventory: 3,
 
-           // excercise: add an onSale boolean to the data object, use that to conditionally render a p tag that says "On Sale", whenever onSale is true
+           // exercise: add an onSale boolean to the data object, use that to conditionally render a p tag that says "On Sale", whenever onSale is true
            onSale: false
+
             
         }
     }
