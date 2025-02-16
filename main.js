@@ -27,8 +27,8 @@ const app = Vue.createApp({
            awesome: true,
 
            // if inventory > 10 (stock), else-if inventory <= 10 && inventory > 0 (almost out of stock), else (out of stock) 
-           inventory: 99,
-
+           //inventory: 99,
+           inStock: false,
            // exercise: add an onSale boolean to the data object, use that to conditionally render a p tag that says "On Sale", whenever onSale is true
            //onSale: false,
 
@@ -39,9 +39,6 @@ const app = Vue.createApp({
             { id: 437, color: 'green' , image: './assets/images/socks_green.jpg' },
             { id: 212, color: 'blue' , image: './assets/images/socks_blue.jpg'  }, 
            ],
-           
-           // count
-            count: 0,
 
             todos: [
                       { name: 'Schedule 30 Shorts!'} , { name: 'Giveaway' }, { name: 'Shower!' } ,

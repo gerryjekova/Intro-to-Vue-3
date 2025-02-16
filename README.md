@@ -125,7 +125,7 @@ An application instance won't render anything until its .mount() method is calle
                         </li>
                       </template>
 ```
-
+html
 ```
                       <!-- exercise to do sizes, I did quantities too -->
                       <ul>
@@ -134,3 +134,27 @@ An application instance won't render anything until its .mount() method is calle
                       </li>
                       </ul>
 ```
+js
+```
+   // SIZES
+           sizes: [
+             { quantity: 20, size: 35 }, 
+             { quantity: 9, size: 36 }, 
+             { quantity: 16, size: 37 }, 
+             { quantity: 12, size: 38 },
+             { quantity: 35, size: 39 }
+           ],
+```
+### Style binding
+- camel vs kebab
+- ![alt text](/assets/images/styl-object-camel.png)
+- ![alt text](/assets/images/kebab-case-style-object.png)
+- removing block for clutter
+```
+         <!-- inventory v-if v-else-if v-else -->
+                      <h2 v-if="inventory > 10">In stock!</h2>
+                      <h2 v-else-if="inventory <= 10 && inventory > 0">Almost out of stock!</h2> <!-- if it has 10 or less, but more than 0-->
+                      <h2 v-else>Oh no 😢 Out of Stock!</h2>
+```
+- Ternary options 
+  ![alt text](/assets/images/ternary-options-class-binding.png)

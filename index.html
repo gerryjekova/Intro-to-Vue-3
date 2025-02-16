@@ -26,7 +26,8 @@
                <div class="product-image">
                   <!-- image goes here below -->
                  
-                  <img v-bind:src="image">
+                  <img v-bind:src="image"
+                  :class="{ 'out-of-stock-img' : !inStock }">
                   <!-- how do we bind src to image? -> v-bind:src="image" - 💡this is the v-bind directive - we created a bond between the attribute "image" & the data itself inside it in the app-->
                  
                </div>
@@ -42,10 +43,9 @@
                     <!-- <p v-show="inStock">In Stock</p> -->  <!-- v-if it is in stock - show 'in stock'-->  <!-- can be achieved with v-show as well -->
                     <!--<p v-else>Out of Stock</p> -->  <!-- or else show 'out of stock'-->
                     
-                  <!-- inventory v-if v-else-if v-else -->
-                      <h2 v-if="inventory > 10">In stock!</h2>
-                      <h2 v-else-if="inventory <= 10 && inventory > 0">Almost out of stock!</h2> <!-- if it has 10 or less, but more than 0-->
-                      <h2 v-else>Oh no 😢 Out of Stock!</h2>
+         
+                      <h2 v-if="inStock">In stock!</h2>
+                      
                       
                       <ul>
                         <!-- for each detail (array index) in details (array) print out each {{ detail }} from the array and render them in order  -->
@@ -53,23 +53,22 @@
                       </ul>
 
                       <!-- you can call on their properties-->
-                      <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)"> COLOR: {{ variant.color }} </div>
-                      <!-- vue's version of hover is 'mouseover'-->
+                      <div v-for="variant in variants"
+                      :key="variant.id" 
+                      @mouseover="updateImage(variant.image)"
+                      class="color-circle"
+                      :style="{ backgroundColor: variant.color }"> 
+                      </div>
+                      
 
                       <!-- button added in L6 -->
-                      <button class="button" v-on:click="addToCart">Add to Cart</button>   
-              
-                  
-                      <li v-for="item in items">
-                        {{ item.message }}
-                      </li>
-
-                      <!-- exercise to do sizes, I did quantities too -->
-                      <ul>
-                      <li v-for="size in sizes" :key="size.quantity">
-                       Size: {{ size.size }} Quantity: {{ size.quantity }}
-                      </li>
-                      </ul>
+                      <button
+                      class="button"
+                      :class="{ disabledButton: !inStock }"
+                      :disabled="!inStock"  
+                      v-on:click="addToCart">
+                      Add to Cart
+                     </button>   
 
             </div>
          </div>
