@@ -36,8 +36,8 @@ const app = Vue.createApp({
            details: [ '50% cotton', '30% wool', '20% polyester'],
            // creating variants array 
            variants: [
-            { id: 437, color: 'lime' },
-            { id: 212, color: 'blue'}, 
+            { id: 437, color: 'green' , image: './assets/images/socks_green.jpg' },
+            { id: 212, color: 'blue' , image: './assets/images/socks_blue.jpg'  }, 
            ],
 
            // items
@@ -58,9 +58,22 @@ const app = Vue.createApp({
             count: 0,
 
             todos: [
-                { name: 'Schedule 30 Shorts!'} , { name: 'Giveaway' }, { name: 'Shower!' } 
-            ]
+                      { name: 'Schedule 30 Shorts!'} , { name: 'Giveaway' }, { name: 'Shower!' } ,
+                   ],
+                   
+            cart: 0,
         }
+    },
+    methods: {
+      addToCart () {
+        this.cart += 1
+      },
+      updateImage(variantImage) {
+        this.image = variantImage
+      },
+      removeFromCart() {
+        this.cart -= 1
+      }
     }
 })
 

@@ -16,6 +16,9 @@
          <!-- NAV AND CLOSING DIV TAG IS ON SAME ROW -->
          <div class="nav-bar"></div>
 
+         <!-- l6 cart-->
+         <div class="cart">Cart({{ cart }})</div>
+
          <!-- Adding this lot in lesson 2 - Attribute Binding in Vue 3-->
          <div class="product-display">
             <div class="product-container">
@@ -50,8 +53,14 @@
                       </ul>
 
                       <!-- you can call on their properties-->
-                      <div v-for="variant in variants" :key="variant.id"> COLOR: {{ variant.color }} </div>
-                      
+                      <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)"> COLOR: {{ variant.color }} </div>
+                      <!-- vue's version of hover is 'mouseover'-->
+
+                      <!-- button added in L6 -->
+                      <button class="button" v-on:click="addToCart">Add to Cart</button>   
+                      <!-- remove from cart button added as an exercise -->
+                      <button class="button" v-on:click="removeFromCart"> -1 from Cart</button>   
+                     <!-- cart '+=' <- this increments 1 to cart when the button is activated (turned on -- v-on )-->
                   
                       <li v-for="item in items">
                         {{ item.message }}
@@ -63,11 +72,6 @@
                        Size: {{ size.size }} Quantity: {{ size.quantity }}
                       </li>
                       </ul>
-
-                      <!-- counter for quantities later -->
-                      <div>
-                        <button @click="count++">{{ count }}</button>
-                      </div>
 
 
                       <ul>

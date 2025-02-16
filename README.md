@@ -85,3 +85,19 @@ An application instance won't render anything until its .mount() method is calle
 - [Maintain state with :key](https://vuejs.org/guide/essentials/list.html#v-for-with-v-if)
 - [key attribute](https://vuejs.org/api/built-in-special-attributes.html#key)
 - [maintain state with key](https://vuejs.org/guide/essentials/list#maintaining-state-with-key)
+```
+  <!-- button added in L6 -->
+       <button class="button" v-on:click="cart += 1">Add to Cart</button>   
+  <!-- cart '+=' <- this increments 1 to cart when the button is activated (turned on -- v-on )-->
+```
+- ![event listener on element](/assets/images/listening-for-events-on-element.png)
+- ![v-on](/assets/images/v-on-introduction.png)
+- ![v-on](assets/images/v-on.png)
+- v-on is also '@' for short just like v-bind is with ':'
+- i wrote this one in the prev lesson from the docs as an example , now removing it for clutter
+```
+  <!-- counter for quantities later -->
+  <div>
+    <button @click="count++">{{ count }}</button>
+  </div>
+```
