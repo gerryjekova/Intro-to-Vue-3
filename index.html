@@ -37,14 +37,15 @@
                      <!-- EXAMPLE: <p> {{ firstName + ' ' + lastName}} </p> -->
                      <!-- EXAMPLE 2: <span> {{ clicked ? true : false }} </span> -->
                      <!--EXAMPLE 3: <div> {{ message.method() }} </div> -->
-                     <h1> {{ product }} </h1>
+                     <h1> {{ title }} </h1>
+                     <p v-show="onSale"> is on Sale! </p>
 
                      <!-- 4- Conditional Rendering - we add the below <p> and want to give them a condition where 1 shows up, we head to app to make property-->
                     <!-- <p v-show="inStock">In Stock</p> -->  <!-- v-if it is in stock - show 'in stock'-->  <!-- can be achieved with v-show as well -->
                     <!--<p v-else>Out of Stock</p> -->  <!-- or else show 'out of stock'-->
                     
          
-                      <h2 v-if="inStock">In stock!</h2>
+                     <!-- <h2 v-if="inStock">In stock!</h2> -->
                       
                       
                       <ul>
@@ -53,9 +54,9 @@
                       </ul>
 
                       <!-- you can call on their properties-->
-                      <div v-for="variant in variants"
+                      <div v-for="(variant, index) in variants"
                       :key="variant.id" 
-                      @mouseover="updateImage(variant.image)"
+                      @mouseover="updateVariant(index)"
                       class="color-circle"
                       :style="{ backgroundColor: variant.color }"> 
                       </div>

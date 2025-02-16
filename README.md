@@ -106,6 +106,10 @@ An application instance won't render anything until its .mount() method is calle
 <!-- remove from cart button added as an exercise -->
 <button class="button" v-on:click="removeFromCart"> -1 from Cart</button>   
 <!-- cart '+=' <- this increments 1 to cart when the button is activated (turned on -- v-on )-->
+
+  removeFromCart() {
+        this.cart -= 1
+      }
 ```
 > declutter
 ```
@@ -158,3 +162,8 @@ js
 ```
 - Ternary options 
   ![alt text](/assets/images/ternary-options-class-binding.png)
+  - ![alt text](image-3.png)
+  - ![alt text](image-1.png)
+  - ![alt text](image-2.png)
+### Computed Properties
+![alt text](image-4.png)
