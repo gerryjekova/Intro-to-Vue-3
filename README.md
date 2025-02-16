@@ -101,3 +101,36 @@ An application instance won't render anything until its .mount() method is calle
     <button @click="count++">{{ count }}</button>
   </div>
 ```
+- remove cart button exercise to L6
+```
+<!-- remove from cart button added as an exercise -->
+<button class="button" v-on:click="removeFromCart"> -1 from Cart</button>   
+<!-- cart '+=' <- this increments 1 to cart when the button is activated (turned on -- v-on )-->
+```
+> declutter
+```
+
+                      <ul>
+                        <template v-for="item in items">
+                          <li>{{ item.msg }}</li>
+                          <li class="divider" role="presentation"></li>
+                        </template>
+                      </ul>
+```
+
+```
+   <template v-for="todo in todos" :key="todo.name">
+                        <li v-if="!todo.isComplete">
+                          {{ todo.name }}
+                        </li>
+                      </template>
+```
+
+```
+                      <!-- exercise to do sizes, I did quantities too -->
+                      <ul>
+                      <li v-for="size in sizes" :key="size.quantity">
+                       Size: {{ size.size }} Quantity: {{ size.quantity }}
+                      </li>
+                      </ul>
+```

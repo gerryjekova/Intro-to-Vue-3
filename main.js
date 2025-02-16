@@ -39,21 +39,7 @@ const app = Vue.createApp({
             { id: 437, color: 'green' , image: './assets/images/socks_green.jpg' },
             { id: 212, color: 'blue' , image: './assets/images/socks_blue.jpg'  }, 
            ],
-
-           // items
-           items: [
-            { message: 'Foo'}, { message: 'Bar'}
-           ],
-
-           // SIZES
-           sizes: [
-             { quantity: 20, size: 35 }, 
-             { quantity: 9, size: 36 }, 
-             { quantity: 16, size: 37 }, 
-             { quantity: 12, size: 38 },
-             { quantity: 35, size: 39 }
-           ],
-
+           
            // count
             count: 0,
 
